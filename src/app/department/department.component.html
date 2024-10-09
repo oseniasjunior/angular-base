@@ -1,0 +1,46 @@
+<div class="container">
+
+  <mat-card>
+    <h4 class="form-title">Lista departamentos</h4>
+
+    <div class="panel-search">
+      <form>
+        <mat-form-field>
+          <mat-label>Nome</mat-label>
+          <input matInput type="text">
+        </mat-form-field>
+      </form>
+      <section>
+        <button color="primary" mat-flat-button>Pesquisar</button>
+        <button color="accent" mat-flat-button (click)="goDepartmentItem()">Novo</button>
+      </section>
+    </div>
+
+    <div>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> Código</th>
+          <td mat-cell *matCellDef="let element"> {{ element.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Nome</th>
+          <td mat-cell *matCellDef="let element"> {{ element.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="created_at">
+          <th mat-header-cell *matHeaderCellDef> Criado em</th>
+          <td mat-cell *matCellDef="let element"> {{ element.created_at | date: 'short' }}</td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+    </div>
+  </mat-card>
+
+</div>

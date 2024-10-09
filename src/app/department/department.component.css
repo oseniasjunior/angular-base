@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.panel-search {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+
+  form {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    margin-top: 20px;
+
+    mat-form-field {
+      flex: 1;
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: auto;
+    align-items: center;
+  }
+}

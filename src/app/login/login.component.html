@@ -1,0 +1,28 @@
+<div class="container">
+  <mat-card class="card">
+    <form [formGroup]="formGroup" class="login-form">
+      <mat-form-field>
+        <mat-label>Usuário</mat-label>
+        <input matInput type="text" formControlName="username">
+        @if (formGroup.get('username').invalid) {
+          <mat-error>
+            Campo obrigatório
+          </mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" formControlName="password">
+        @if (formGroup.get('password').invalid) {
+          <mat-error>
+            Campo obrigatório
+          </mat-error>
+        }
+      </mat-form-field>
+      <section class="buttons">
+        <button [disabled]="formGroup.invalid" mat-flat-button (click)="login()">Entrar</button>
+      </section>
+    </form>
+
+  </mat-card>
+</div>

@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+form {
+  mat-form-field {
+    display: flex;
+    margin: 10px;
+  }
+
+  section {
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-end
+  }
+
+}

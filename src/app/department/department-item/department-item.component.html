@@ -1,0 +1,23 @@
+<div class="container">
+  <mat-card>
+    <h4 class="form-title">Cadastro de departamento</h4>
+
+    <form [formGroup]="formGroup">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" maxlength="100" formControlName="name"/>
+        @if (formGroup.get('name').invalid) {
+          <mat-error>
+            Campo obrigatório
+          </mat-error>
+        }
+      </mat-form-field>
+      <section>
+        <button color="warn" mat-flat-button (click)="goDepartmentList()">Voltar</button>
+        <button color="accent" mat-flat-button [disabled]="formGroup.invalid" (click)="save()">Salvar</button>
+      </section>
+    </form>
+
+  </mat-card>
+
+</div>
